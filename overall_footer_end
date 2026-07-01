@@ -1,0 +1,180 @@
+<!-- BEGIN html_validation -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<div>
+	<div>
+		<div>
+			<div>
+				<div>
+					<div>
+
+						<ul>
+							<li>
+<!-- END html_validation -->
+							</li>
+						</ul>
+						<!-- BEGIN switch_footer_links -->
+						<ul>
+							<li>
+								<!-- BEGIN footer_link -->
+									<!-- BEGIN switch_separator -->&nbsp;|&nbsp;<!-- END switch_separator -->
+									{switch_footer_links.footer_link.FOOTER_LINK_SEPARATOR}<a name="bottom" class="copyright" href="{switch_footer_links.footer_link.U_FOOTER_LINK_HREF}" rel="{switch_footer_links.footer_link.FOOTER_LINK_REL}" target="{switch_footer_links.footer_link.FOOTER_LINK_TARGET}" title="{switch_footer_links.footer_link.L_FOOTER_LINK_TITLE}">{switch_footer_links.footer_link.L_FOOTER_LINK_TEXT}</a>
+								<!-- END footer_link -->
+							</li>
+						</ul>
+						<!-- END switch_footer_links -->
+
+					</div>
+                                  
+					<br />
+					<p class="center adminPanel">
+						<strong>{ADMIN_LINK}</strong>
+					</p>
+                                                                     
+				</div>
+				{PROTECT_FOOTER}
+			</div>
+		</div>
+          
+	</div>
+
+</div>
+  
+  
+  
+  
+<div class="customFooter">
+  <footer>
+    <!-- Top Social Media Bar -->
+    <div class="footer-social">
+      <div class="footer-social-left">
+<a href="https://www.forumotion.com/" target="_blank">Free forum</a>
+<a href="https://www.forumotion.com/phpbb" target="_blank">phpBB</a>
+<a name="bottom" href="https://help.forumotion.com/" target="_blank">Free forum support</a>
+<a name="bottom" href="/statistics" rel="nofollow">Statistics</a>
+<a name="bottom" href="/contact" rel="nofollow">Contact</a>
+<a href="/abuse?page=%2F&amp;report=1" rel="nofollow">Report an abuse</a>
+      </div>
+    </div>
+
+    <!-- Footer Content -->
+    <div class="footer-content">
+      <!-- Column 1 -->
+      <div class="footer-col">
+        <h6>WebArtz Forum</h6>
+        <div class="footer-line"></div>
+        <p>
+         A friendly forum for learning and discussing HTML, CSS, and web design—perfect for both beginners and advanced coders, with fun chat and game zones too.
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-col">
+        <h6>Products</h6>
+        <div class="footer-line"></div>
+        <p><a href="https://www.webartzforum.com/t458-graphic-request-rules" target="_BLANK">Graphic request Rules</a></p>
+        <p><a href="https://www.webartzforum.com/t3996-suggest-a-theme" target="_BLANK">Suggest Theme for development</a></p>
+        <p><a href="https://www.webartzforum.com/h10-tutorial-list" target="_BLANK">Tutorials List</a></p>
+        <p><a href="https://www.webartzforum.com/h4-contest-winners" target="_BLANK">Contest Winners</a></p>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-col">
+        <h6>Useful Links</h6>
+        <div class="footer-line"></div>
+        <p><a href="https://www.webartzforum.com/Affiliates-h5.htm" target="_BLANK">Affiliates</a></p>
+        <p><a href="https://www.webartzforum.com/Shop-bull-WebArtz-h6.htm" target="_BLANK">Theme Shop</a></p>
+        <p><a href="https://www.webartzforum.com/h3-webartz-forum-staff" target="_BLANK">Forum Staff</a></p>
+        <p><a href="https://www.webartzforum.com/Rules-bull-WebArtz-Forum-h1.htm" target="_BLANK">Forum Rules</a></p>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-col">
+        <h6>Contact</h6>
+        <div class="footer-line"></div>
+        <p><a href="https://webartzforum.com/privmsg?mode=post&u=1" target="_BLANK">Contact Administrator</a></p>
+        <p><a href="https://github.com/aleksandar-arsic92" target="_BLANK">GitHub</a></p>
+      </div>
+    </div>
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+      © 2025 Copyright&nbsp;
+      <a href="https://www.webartzforum.com/">WebArtz</a>
+    </div>
+  </footer>
+</div>
+
+  
+  
+  
+  
+
+<!-- BEGIN switch_facebook_login -->
+<div id="fb-root"></div>
+<script type="text/javascript">
+    $(document).ready( function() {
+        $('div.fb-login-button, span.fb-login-button').attr({
+            "data-scope": "{switch_facebook_login.FB_SCOPE}",
+            "data-max-rows": "{switch_facebook_login.FB_MAX_ROWS}",
+            "data-size": "{switch_facebook_login.FB_BUTTON_SIZE}",
+            "data-show-faces": "{switch_facebook_login.FB_SHOW_FACES}",
+            "data-auto-logout-link": "{switch_facebook_login.FB_AUTO_LOGOUT}"
+        });
+        $('div.fb-login-button, span.fb-login-button').each(function() {
+            if(typeof $(this).attr('onlogin') == typeof undefined || $(this).attr('onlogin') === false) {
+                $(this).attr('onlogin', '{switch_facebook_login.FB_ONLOGIN}');
+            }
+            if($(this).html() == '') {
+                $(this).html('{switch_facebook_login.FB_LABEL}');
+            }
+        });
+        
+        FB.init({
+            appId   : "{switch_facebook_login.FB_APP_ID}",
+            cookie  : {switch_facebook_login.FB_COOKIE},
+            xfbml   : {switch_facebook_login.FB_XFBML},
+            oauth   : {switch_facebook_login.FB_OAUTH},
+            version : '{switch_facebook_login.FB_VERSION}'
+        });
+        
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/{switch_facebook_login.FB_LOCAL}/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    });
+    function onLoginFB() {
+        window.location.replace('{switch_facebook_login.FB_ONLOGIN_URL}')
+    }
+</script>
+<!-- END switch_facebook_login -->
+<!-- BEGIN switch_topicit_connect -->
+<script type="text/javascript">
+    $(document).ready( function() {
+        $('div.ti-connect').attr({
+            'data-loc' : '{switch_topicit_connect.TOPICIT_URL}',
+            'data-login' : '{switch_topicit_connect.BOARD_LOGIN}',
+            'data-version' : '{switch_topicit_connect.TOPICIT_VERSION}',
+            'data-lang' : '{switch_topicit_connect.BOARD_LANG}'
+        });
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "{switch_topicit_connect.TOPICIT_ENDPOINT}";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'topicit-connect'));
+    });
+</script>
+<!-- END switch_topicit_connect -->
+<script type="text/javascript">
+//<![CDATA[
+	fa_endpage();
+//]]>
+</script>
+</body>
+</html>

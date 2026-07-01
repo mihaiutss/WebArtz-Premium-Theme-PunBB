@@ -1,0 +1,267 @@
+<style>
+.shop-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.shop-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.shop-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  flex: 1 1 300px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  min-height: 480px; /* Adjust as needed */
+}
+
+.shop-card:hover {
+  transform: translateY(-4px);
+}
+
+.shop-card img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.shop-card img:hover {
+  border-color: #000;
+  box-shadow: 0 0 5px #000;
+}
+
+.shop-card h3 {
+  font-size: 18px;
+  color: #00a8e8;
+  margin-bottom: 10px;
+}
+
+.shop-card a {
+  color: #00a8e8;
+  text-decoration: none;
+}
+.shop-card a:hover {
+  text-decoration: underline;
+}
+
+.shop-card .spacer {
+  flex-grow: 1;
+}
+
+/* Bottom-aligned price info */
+.shop-card .price-info {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  color: #444;
+}
+
+/* Placeholder */
+.placeholder {
+  background: #f9f9f9;
+  color: #999;
+  font-style: italic;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 480px;
+  border-radius: 12px;
+  text-align: center;
+  padding: 20px;
+  flex: 1 1 300px;
+  max-width: 320px;
+}
+
+/* Footer message */
+.shop-footer {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 40px;
+  color: #444;
+}
+.shop-footer a {
+  color: #00a8e8;
+  text-decoration: underline;
+}
+.shop-footer a:hover {
+  text-decoration: none;
+}
+  
+  /* Overlay backdrop */
+#lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Zoomed-in container */
+.lightboxContent {
+  position: relative;
+  max-width: 80vw;
+  max-height: 80vh;
+  animation: scaleUp 0.3s ease-out forwards;
+  transform-origin: center center;
+}
+
+#lightboxImg {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease-out;
+}
+
+/* Close button */
+#lightboxClose {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  transition: background 0.3s;
+}
+#lightboxClose:hover {
+  background: #ddd;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes scaleDown {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(0.5); opacity: 0; }
+}
+
+</style><div class="shop-container">
+
+  <div class="shop-grid">
+    
+    <!-- Product 1 -->
+    <div class="shop-card">
+      <h3><a href="https://www.webartzforum.com/t4005-awesomebb-dark-theme" target="_blank">AwesomeBB Dark Theme</a></h3>
+      <a href="https://i.ibb.co/tT31m8KH/Screenshot-2.jpg" target="_blank">
+        <img src="https://i.ibb.co/tT31m8KH/Screenshot-2.jpg" alt="Template Preview">
+      </a>
+      <a href="https://i.ibb.co/PZt7DmRq/Awesome-BB-dark-theme-post.jpg" target="_blank">
+        <img src="https://i.ibb.co/PZt7DmRq/Awesome-BB-dark-theme-post.jpg" alt="Template Preview">
+      </a>
+      <div class="spacer"></div>
+      <div class="price-info">
+        <p>Points: 100</p>
+        <p>Price: 5 USD</p>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="shop-card">
+      <h3><a href="https://www.webartzforum.com/t4005-awesomebb-dark-theme" target="_blank">Anime World PunBB Theme</a></h3>
+      <a href="https://i.ibb.co/1GVxWKfh/top-part-of-forum.jpg" target="_blank">
+        <img src="https://i.ibb.co/1GVxWKfh/top-part-of-forum.jpg" alt="Template Preview">
+      </a>
+      <a href="https://i.ibb.co/4Zp8K70k/posts-preview.jpg" target="_blank">
+        <img src="https://i.ibb.co/4Zp8K70k/posts-preview.jpg" alt="Template Preview">
+      </a>
+      <div class="spacer"></div>
+      <div class="price-info">
+        <p>Points: 250</p>
+        <p>Price: 15 USD</p>
+      </div>
+    </div>
+
+    <!-- Placeholders -->
+    <div class="placeholder">Theme in progress</div>
+    <div class="placeholder">Theme in progress</div>
+    <div class="placeholder">Theme in progress</div>
+    <div class="placeholder">Theme in progress</div>
+    <div class="placeholder">Theme in progress</div>
+    <div class="placeholder">Theme in progress</div>
+
+  </div>
+
+  <div class="shop-footer">
+    In order to purchase any theme, please contact 
+    <a href="https://www.webartzforum.com/privmsg?mode=post&u=1">Forum Administrator</a> via PM.
+  </div>
+</div>
+        <div id="lightboxOverlay">
+  <div class="lightboxContent">
+    <button id="lightboxClose">&times;</button>
+    <img id="lightboxImg" src="" alt="Preview">
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const overlay = document.getElementById('lightboxOverlay');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  const lightboxContent = document.querySelector('.lightboxContent');
+
+  // Open lightbox
+  document.querySelectorAll('.shop-card a img').forEach(img => {
+    img.parentElement.addEventListener('click', e => {
+      e.preventDefault();
+      const fullSize = img.parentElement.href;
+      lightboxImg.src = fullSize;
+      overlay.style.display = 'flex';
+    });
+  });
+
+  // Close with button
+  closeBtn.addEventListener('click', () => {
+    closeLightbox();
+  });
+
+  // Close when clicking outside image
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) closeLightbox();
+  });
+
+  function closeLightbox() {
+    // Animate zoom out
+    lightboxContent.style.animation = 'scaleDown 0.25s ease-in forwards';
+    overlay.style.animation = 'fadeIn 0.25s reverse';
+
+    setTimeout(() => {
+      overlay.style.display = 'none';
+      lightboxContent.style.animation = 'scaleUp 0.3s ease-out forwards'; // reset for next open
+      overlay.style.animation = 'fadeIn 0.3s ease-out forwards';
+      lightboxImg.src = '';
+    }, 200);
+  }
+});
+</script>

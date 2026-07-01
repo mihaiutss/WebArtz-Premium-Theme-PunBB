@@ -1,0 +1,142 @@
+<style>
+body {
+  background: #f8f8f8;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.staff-title {
+  text-align: center;
+  font-size: 2.5em!important;
+  color: #00bcd4;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 3px #ccc;
+}
+
+.staff-group {
+  margin-bottom: 50px;
+}
+
+.group-title {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  border-left: 6px solid #00bcd4;
+  padding-left: 12px;
+  color: #444;
+}
+
+.staff-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.staff-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.staff-card:hover {
+  transform: translateY(-6px);
+}
+
+.staff-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00bcd4;
+  margin-bottom: 10px;
+}
+
+.staff-name {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.staff-age,
+.staff-location,
+.staff-skills {
+  font-size: 0.9em;
+  color: #666;
+  margin: 4px 0;
+}
+
+</style>
+
+<h2 class="staff-title">WebArtz Forum Staff</h2>
+
+<!-- Administrators Group --><div class="staff-group">
+  <h3 class="group-title">Administrators</h3>
+  <div class="staff-cards">
+    <div class="staff-card">
+      <img class="staff-avatar" src="https://i.pinimg.com/originals/1f/42/cc/1f42cc10cce3b3dcd081b320f5881a74.gif" alt="Admin">
+      <div class="staff-name">Alex</div>
+      <div class="staff-age">Age: 35</div>
+      <div class="staff-location">Location: Serbia</div>
+      <div class="staff-skills">HTML | CSS | JavaScript | PHP | Admin Tools</div>
+    </div>
+    <!-- More Admins -->
+  </div>
+</div>
+
+<!-- Moderators Group --><div class="staff-group">
+  <h3 class="group-title">Moderators</h3>
+  <div class="staff-cards">
+    <div class="staff-card">
+      <img class="staff-avatar" src="https://i.ibb.co/W1zVZhN/default-avatar.jpg" alt="Moderator">
+      <div class="staff-name">Unknown</div>
+        <div class="staff-age">Age: N/A</div>
+        <div class="staff-location">Location: N/A</div>
+        <div class="staff-skills">N/A</div>
+    </div>
+    <!-- More Moderators -->
+  </div>
+</div>
+
+<!-- Technicians Group --><div class="staff-group">
+  <h3 class="group-title">Technicians</h3>
+
+  <div class="staff-cards">
+    
+    <div class="staff-card">
+      <img class="staff-avatar" src="https://2img.net/u/3111/11/99/51/avatars/2612-38.jpg" alt="Technician">
+      <div class="staff-name">ByteMaster</div>
+      <div class="staff-age">Age: 32</div>
+      <div class="staff-location">Location: India</div>
+      <div class="staff-skills">HTML | JS | NodeJS | Backend Fixes</div>
+    </div>
+    <!-- More Technicians -->
+      
+          <div class="staff-card">
+      <img class="staff-avatar" src="https://2img.net/u/3111/11/99/51/avatars/1871-8.png" alt="Technician">
+      <div class="staff-name">Mihai</div>
+      <div class="staff-age">Age: 27</div>
+      <div class="staff-location">Location: Bucharest, România</div>
+      <div class="staff-skills">Admin at Romanian support forum, Technician, Bug Hunter</div>
+    </div>
+      
+  </div>
+</div>
+
+<!-- Graphic Designers Group --><div class="staff-group">
+  <h3 class="group-title">Graphic Designers</h3>
+  <div class="staff-cards">
+        <div class="staff-card">
+      <img class="staff-avatar" src="https://i.ibb.co/W1zVZhN/default-avatar.jpg" alt="Moderator">
+      <div class="staff-name">Unknown</div>
+        <div class="staff-age">Age: N/A</div>
+        <div class="staff-location">Location: N/A</div>
+        <div class="staff-skills">N/A</div>
+    </div>
+    <!-- More Graphic Designers -->
+  </div>
+</div>

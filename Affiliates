@@ -1,0 +1,135 @@
+<style>
+/* Custom wrapper – avoids forum defaults */
+.affiliate-page {
+  padding: 20px 30px;
+  background:#fbfbfb;
+  border:1px solid #ddd;
+}
+
+.affiliate-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.affiliate-box {
+  margin-bottom: 25px;
+}
+
+.copy-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.copy-textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  font-family: monospace;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.5;
+  cursor: default;
+}
+
+.copy-textarea:focus {
+  outline: none;
+}
+
+.copy-btn {
+  margin-top: 5px;
+  padding: 5px 10px;
+  background: #e0e0e0;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px; 
+  display: block;
+}
+
+.copy-btn:hover {
+  background: #d0d0d0;
+}
+
+.copy-success {
+  color: green;
+  margin-top: 5px;
+  font-size: 13px;
+  display: none;
+}
+
+.affiliate-table {
+  width: 95%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.affiliate-table td {
+  text-align: center;
+  padding: 10px;
+}
+</style><div class="affiliate-page">
+  <div class="affiliate-title">Link to WebArtz Forum</div>
+
+  <div class="affiliate-box">
+    <label class="copy-label" for="text-link">Text Link</label>
+    <textarea class="copy-textarea" id="text-link" rows="2" disabled><a href="https://www.webartzforum.com/" title="Web Design & Coding Forum" target="_blank">WebArtz - Web Design & Coding Forum</a></textarea>
+    <button class="copy-btn" data-copy="text-link">Copy</button>
+    <div class="copy-success" id="copied-text-link">Copied!</div>
+  </div>
+
+  <div class="affiliate-box">
+    <label class="copy-label" for="image-link">Image Link</label>
+    <textarea class="copy-textarea" id="image-link" rows="3" disabled><a href="https://www.webartzforum.com/" title="Web Design & Coding Forum" target="_blank"><img src="https://2img.net/h/oi48.tinypic.com/34rx7ps.jpg" alt="WebArtz Forum" /></a></textarea>
+    <button class="copy-btn" data-copy="image-link">Copy</button>
+    <div class="copy-success" id="copied-image-link">Copied!</div><br /> 
+    The result: <a href="https://www.webartzforum.com/" title="Web Design & Coding Forum" target="_blank"><img src="https://2img.net/h/oi48.tinypic.com/34rx7ps.jpg" alt="WebArtz Forum" /></a>
+  </div>
+
+  <div class="affiliate-box">
+    <p>
+      PM <a href="https://www.webartzforum.com/u1contact">Alex</a> to provide your website's URL & affiliate image (88x31). Make sure your site includes our button.
+      <br><br><strong>Note:</strong> Affiliates are approved at staff discretion.
+    </p>
+  </div>
+
+  <div class="affiliate-title">WebArtz Affiliates</div>
+
+  <table class="affiliate-table">
+    <tr>
+      <td><a href="http://superiorgaming.forumotion.com" target="_blank"><img src="https://i.servimg.com/u/f48/17/08/32/12/superi14.gif" alt="Superior Gaming" style="width:88px;height:31px;"></a></td>
+      <td><a href="http://advertiseforums.forumotion.com/forum" target="_blank"><img src="https://i.servimg.com/u/f31/17/51/23/89/affili10.png" alt="Advertise Forums" style="width:88px;height:31px;"></a></td>
+      <td><a href="http://unstoppablemind.forumotion.co.uk" target="_blank"><img src="https://i.servimg.com/u/f10/20/46/13/67/banner10.jpg" alt="Unstoppable Mind" style="width:88px;height:31px;"></a></td>
+      <td><a href="https://almarsguides.com/" target="_blank"><img src="https://i.ibb.co/tpHKw2PN/almarsguides.jpg" alt="Almar's Guides" style="width:88px;height:31px;"></a></td>
+    </tr>
+    <tr>
+      <td><a href="https://hiddenforest.forumotion.com/" target="_blank"><img src="http://storage.proboards.com/7099179/thumbnailer/QcFheSUsxABPZZtgLcjx.png" alt="Hidden Forest" style="width:88px;height:31px;"></a></td>
+      <td><a href="http://www.quick-d.com/" target="_blank" rel="nofollow"><img src="https://i.servimg.com/u/f47/16/67/68/77/qd_for11.png" alt="Quick Design" style="width:88px;height:31px;"></a></td>
+      <td><!-- Empty --></td>
+      <td><!-- Empty --></td>
+    </tr>
+  </table>
+</div>
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', function () {
+    const id = this.getAttribute('data-copy');
+    const textarea = document.getElementById(id);
+    textarea.disabled = false;
+    textarea.select();
+    document.execCommand('copy');
+    textarea.disabled = true;
+
+    const copiedMsg = document.getElementById(`copied-${id}`);
+    copiedMsg.style.display = 'inline';
+    setTimeout(() => copiedMsg.style.display = 'none', 1500);
+  });
+});
+</script>

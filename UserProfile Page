@@ -1,0 +1,763 @@
+<meta charset="UTF-8" />  <title>Profile Layout</title>  <style>
+
+
+
+#profileContainer, 
+#profileContainer * {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#extraContainer *, 
+#extraContainer *::before, 
+#extraContainer *::after {
+  box-sizing: border-box;
+}
+
+    #profileContainer {
+      width: 1200px;
+      height: 500px;
+      background-color: #f5f7fb;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #profileCover {
+      height: 60%;
+      background-image: url('https://i.ibb.co/KzVY1s6s/profile-cover-default-photo.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .profileDetails {
+      height: 40%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      background-color: #f7f7f7;
+      position: relative;
+border-left: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    }
+
+    .profileStats {
+      display: flex;
+      gap: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .statBlock {
+      text-align: center;
+    }
+
+    .statBlock span {
+      display: block;
+      font-size: 14px;
+      color: #888;
+      font-weight: normal;
+    }
+
+    .profileInfo {
+ position: absolute;
+  left: 50%;
+  top: -85px; 
+  transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profileAvatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 6px solid #fff!important;
+      object-fit: cover;
+    background: #fff;
+    }
+
+    .username {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .handle {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .socialIcons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .socialIcons a {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-size: 18px;
+      color: #555;
+    }
+
+#loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(245, 245, 245, 0.95);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(6px);
+}
+
+.loaderBox {
+  text-align: center;
+}
+
+.spinner {
+  border: 6px solid #ccc;
+  border-top: 6px solid #007bff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+.loadingText {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+#extraContainer {
+  padding: 40px;
+    background: #f7f7f7;
+    border: 1px solid #d1d1d1;
+   margin-top:20px;
+}
+
+.aboutSection {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.aboutSection h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.aboutText {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  text-align: left;
+}
+
+.infoFlex {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.infoPanel {
+  width: 30%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.infoPanel h3 {
+  margin-bottom: 16px;
+  font-size: 22px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  color: #555;
+}
+
+.infoItem {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #333;
+}
+
+.infoItem span {
+  font-weight: bold;
+  margin-right: 6px;
+  color: #777;
+}
+
+.placeholderPanel {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  min-height: 200px;
+  padding: 20px;
+}
+
+.aboutSectionAndInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.rankTimeline {
+  position: relative;
+  margin-top: 20px;
+}
+
+.rank {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+
+.rank::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background: gray;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.rank::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  bottom: -22px;
+  width: 2px;
+  background: #ccc;
+  z-index: 1;
+}
+
+.rank:last-child::after {
+  display: none;
+}
+
+.rank.earned::before {
+  background: #4caf50;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+  }
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.badge {
+  background: #f7f9fc;
+  padding: 10px 15px;
+  border-radius: 8px;
+  width: 295px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.05);
+  font-size: 14px;
+}
+
+.badge strong {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.badge small {
+  color: #555;
+}
+
+.badges-unearned .badge {
+  opacity: 0.5;
+}
+
+  </style><div id="loadingOverlay">
+  <div class="loaderBox">
+    <div class="spinner"></div>
+    <div class="loadingText">Profile loading...</div>
+  </div>
+
+</div><div id="profileContainer">
+	      
+	<div id="profileCover">
+		   
+	</div>
+	      
+	<div class="profileDetails">
+		        
+		<!--    Left: Stats    -->      
+		<div class="profileStats">
+			          
+			<div class="statBlock">
+				  0<span>Posts</span>  
+			</div>
+			          
+			<div class="statBlock">
+				  0<span>Topics</span>  
+			</div>
+			          
+			<div class="statBlock">
+				  0<span>Friends</span>  
+			</div>
+			        
+		</div>
+		         
+		<!--    Center: Profile    -->      
+		<div class="profileInfo">
+			        <img class="profileAvatar" alt="avatar" src="https://i.ibb.co/W1zVZhN/default-avatar.jpg" />  
+			<div class="username">
+				  Alek  
+			</div>
+			          
+			<div class="handle">
+				  @alek.profile  
+			</div>
+			        
+		</div>
+		         
+		<!--    Right: Socials    -->      
+		<div class="socialIcons">
+                  
+					<a href="#"><img src="https://i.ibb.co/jZvFGsjr/email-contact.png"></a>
+					<a href="#"><img src="https://i.ibb.co/Kpns3Jyd/facebook-contact.png"></a>
+					<a href="#"><img src="https://i.ibb.co/Jj9sgLJH/pinterest-contact.png"></a>
+					<a href="#"><img src="https://i.ibb.co/pBKXnJ9h/private-message-contact.png"></a>    
+					<a href="#"><img src="https://i.ibb.co/7d73KgFm/skype-contact.png"></a>
+			        	<a href="#"><img src="https://i.ibb.co/VY3NCd6J/twitter-contact.png"></a>
+					<a href="#"><img src="https://i.ibb.co/9mJNVmDp/website-contact.png"></a> 
+		</div>
+		      
+	</div>
+</div>
+                                          
+                                          <div id="extraContainer">
+  <div class="aboutSectionAndInfo">
+    <!-- About Me Section -->
+    <div class="aboutSection">
+      <h2>About Me</h2>
+      <p class="aboutText">Loading...</p>
+    </div>
+
+    <!-- Info and Rewards Section -->
+    <div class="infoFlex">
+      <!-- Info Panel -->
+      <div class="infoPanel">
+        <h3>Information</h3>
+        <div id="infoItems"></div>
+      </div>
+
+      <!-- Rank Rewards Panel -->
+      <div class="infoPanel">
+        <h3>Rank Progress</h3>
+        <p><strong class="username">User</strong> has earned <strong>1 of 10</strong> ranks.</p>
+        <div class="rankTimeline">
+          <div class="rank earned"><span>Newbie</span><br><small>Posted at least 1 message</small></div>
+          <div class="rank"><span>Rookie</span><br><small>Not yet earned</small></div>
+          <div class="rank"><span>Apprentice</span><br><small>Not yet earned</small></div>
+          <div class="rank"><span>Explorer</span><br><small>Not yet earned</small></div>
+          <div class="rank"><span>Contributor</span><br><small>Not yet earned</small></div>
+          <div class="rank"><span>Enthusiast</span><br><small>Not yet earned</small></div>
+          <div class="rank"><span>Collaborator</span><br><small>Not yet earned</small></div>
+          <div class="rank"><span>Community Regular</span><br><small>Not yet earned</small></div>
+          <div class="rank"><span>Rising Star</span><br><small>Not yet earned</small></div>
+          <div class="rank"><span>Confidant</span><br><small>Not yet earned</small></div>
+        </div>
+      </div>
+
+      <!-- Badge Panel -->
+      <div class="infoPanel">
+        <h3>6 Badges Earned</h3>
+        <div class="badges">
+          <div class="badge"><strong>Reacting Well</strong><br><small>22 hours ago</small></div>
+          <div class="badge"><strong>First Post</strong><br><small>Thursday at 4:15 PM</small></div>
+          <div class="badge"><strong>Collaborator</strong><br><small>Thursday at 4:15 PM</small></div>
+          <div class="badge"><strong>Week One Done</strong><br><small>June 16</small></div>
+          <div class="badge"><strong>One Month Later</strong><br><small>June 16</small></div>
+          <div class="badge"><strong>One Year In</strong><br><small>June 16</small></div>
+        </div>
+            
+      </div>
+            
+         <div class="infoPanel badges badges-unearned">
+	<h3>{X} Badges Not Earned</h3>
+	</div>   
+            
+            
+    </div>
+  </div>
+</div>
+
+
+                                     
+
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const loadingOverlay = document.getElementById("loadingOverlay");
+
+  const params = new URLSearchParams(window.location.search);
+  const userId = params.get("uid");
+  const baseUrl = window.location.origin;
+
+  if (!userId) {
+    console.error("User ID not found in URL.");
+    loadingOverlay?.remove();
+    return;
+  }
+
+  try {
+    // === FETCH STATS PAGE ===
+    const statsUrl = `https://practiceforumotion.forumotion.com//u${userId}stats`;
+    const statsRes = await fetch(statsUrl);
+    const statsHtml = await statsRes.text();
+    const statsDoc = new DOMParser().parseFromString(statsHtml, 'text/html');
+
+    // === USERNAME + COLOR ===
+    const userSpan = statsDoc.querySelector('.main-head .h3 span[style*="color"]');
+    if (userSpan) {
+      const color = userSpan.getAttribute('style')?.match(/color:\s*(#[0-9A-Fa-f]+)/)?.[1];
+      const username = userSpan.textContent.trim();
+      const usernameEl = document.querySelector('.username');
+      if (usernameEl) {
+        usernameEl.textContent = username;
+        if (color) usernameEl.style.color = color;
+      }
+    }
+
+    // === RANK ===
+    const rankDiv = statsDoc.querySelector('.main-content.clearfix.center');
+    if (rankDiv) {
+      const match = rankDiv.textContent.match(/Rank:\s*(.+)/);
+      const rank = match?.[1]?.trim();
+      const handleEl = document.querySelector('.handle');
+      if (handleEl && rank) handleEl.textContent = rank;
+
+      // === AVATAR from <img> inside rank div ===
+      const avatarImg = rankDiv.querySelector('img');
+      if (avatarImg) {
+        const src = avatarImg.getAttribute('src');
+        const profileAvatar = document.querySelector('.profileAvatar');
+        if (profileAvatar && src) profileAvatar.setAttribute('src', src);
+      }
+    }
+
+    // === STATS ===
+    let posts = null, topics = null, friends = null;
+    statsDoc.querySelectorAll('.stats-field.genmed').forEach(fieldset => {
+      const legend = fieldset.querySelector('legend')?.textContent?.trim();
+
+      if (legend === "Posts") {
+        const li = fieldset.querySelector('li');
+        const match = li?.textContent.match(/Posts\s*:\s*(\d+)/);
+        if (match) posts = parseInt(match[1], 10);
+      }
+
+      if (legend === "Topics") {
+        const li = fieldset.querySelector('li');
+        const match = li?.textContent.match(/Number of topics\s*:\s*(\d+)/);
+        if (match) topics = parseInt(match[1], 10);
+      }
+
+      if (legend === "Information") {
+        fieldset.querySelectorAll('li').forEach(li => {
+          const match = li.textContent.match(/Number of friends\s*:\s*(\d+)/);
+          if (match) friends = parseInt(match[1], 10);
+        });
+      }
+    });
+
+    document.querySelectorAll(".statBlock").forEach(block => {
+      const label = block.querySelector("span")?.textContent?.trim();
+      if (label === "Posts" && posts !== null) block.childNodes[0].nodeValue = `${posts}`;
+      if (label === "Topics" && topics !== null) block.childNodes[0].nodeValue = `${topics}`;
+      if (label === "Friends" && friends !== null) block.childNodes[0].nodeValue = `${friends}`;
+    });
+  
+  // === RANK TIMELINE BASED ON POSTS ===
+const rankThresholds = [
+  { name: "Newbie", min: 1, text: "Posted at least 1 message" },
+  { name: "Rookie", min: 50, text: "Posted at least 50 messages" },
+  { name: "Apprentice", min: 200, text: "Posted at least 200 messages" },
+  { name: "Explorer", min: 500, text: "Posted at least 500 messages" },
+  { name: "Contributor", min: 1000, text: "Posted at least 1k messages" },
+  { name: "Enthusiast", min: 2000, text: "Posted at least 2k messages" },
+  { name: "Collaborator", min: 3000, text: "Posted at least 3k messages" },
+  { name: "Community Regular", min: 4000, text: "Posted at least 4k messages" },
+  { name: "Rising Star", min: 5000, text: "Posted at least 5k messages" },
+  { name: "Confidant", min: 6000, text: "Posted at least 6k messages" }
+];
+
+const rankEls = document.querySelectorAll(".rankTimeline .rank");
+let earnedCount = 0;
+
+rankEls.forEach((el, i) => {
+  const small = el.querySelector("small");
+  const threshold = rankThresholds[i];
+
+  if (posts >= threshold.min) {
+    el.classList.add("earned");
+    small.textContent = threshold.text;
+    earnedCount++;
+  } else {
+    el.classList.remove("earned");
+    small.textContent = "Not yet earned";
+  }
+});
+
+// === UPDATE RANK SUMMARY TEXT ===
+const rankSummary = document.querySelector(".rankTimeline")?.previousElementSibling;
+if (rankSummary) {
+  const userSpan = rankSummary.querySelector(".username");
+  const username = userSpan?.textContent || "User";
+  rankSummary.innerHTML = `<strong class="username">${username}</strong> has earned <strong>${earnedCount} of 10</strong> ranks.`;
+}
+
+  
+// === FETCH AWARDS PAGE ===
+try {
+  const awardsUrl = `https://practiceforumotion.forumotion.com//u${userId}awards`;
+  const awardsRes = await fetch(awardsUrl);
+  const awardsHtml = await awardsRes.text();
+  const awardsDoc = new DOMParser().parseFromString(awardsHtml, 'text/html');
+
+  // === Earned Badges ===
+  const earnedRows = awardsDoc.querySelectorAll('#profile_awards_full .awards_block.owned .award_row');
+  const earnedContainer = document.querySelector('.infoPanel .badges');
+  if (earnedContainer && earnedRows.length > 0) {
+    earnedContainer.innerHTML = ''; // Clear placeholder badges
+
+    earnedRows.forEach(row => {
+      const styleAttr = row.querySelector('.award')?.getAttribute('style') || '';
+      const imgMatch = styleAttr.match(/url\(['"]?(.*?)['"]?\)/);
+      const imgUrl = imgMatch ? imgMatch[1] : '';
+
+      const title = row.querySelector('.award_desc b')?.textContent?.trim() || '';
+      const desc = row.querySelector('.award_desc p')?.textContent?.trim() || '';
+      const date = row.querySelector('.award_desc i')?.textContent?.trim() || '';
+
+      const badge = document.createElement('div');
+      badge.className = 'badge';
+      badge.innerHTML = `
+        <img src="${imgUrl}" alt="${title}" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;">
+        <strong>${title}</strong><br>
+        ${desc ? `<small>${desc}</small><br>` : ''}
+        <small>${date}</small>
+      `;
+      earnedContainer.appendChild(badge);
+    });
+
+    // Update badge count in heading
+    const earnedHeading = earnedContainer.closest('.infoPanel')?.querySelector('h3');
+    if (earnedHeading) {
+      earnedHeading.textContent = `${earnedRows.length} Badges Earned`;
+    }
+  }
+
+  // === Unearned Badges ===
+  const unearnedRows = awardsDoc.querySelectorAll('#profile_awards_full .awards_block.unowned .award_row');
+  const unearnedPanel = document.querySelector('.infoPanel.badges-unearned');
+  if (unearnedPanel) {
+    const heading = unearnedPanel.querySelector('h3');
+    if (heading) {
+      heading.textContent = `${unearnedRows.length} Badges Not Earned`;
+    }
+
+    unearnedRows.forEach(row => {
+      const styleAttr = row.querySelector('.award')?.getAttribute('style') || '';
+      const imgMatch = styleAttr.match(/url\(['"]?(.*?)['"]?\)/);
+      const imgUrl = imgMatch ? imgMatch[1] : '';
+
+      const title = row.querySelector('.award_desc b')?.textContent?.trim() || 'Untitled';
+
+      const badge = document.createElement('div');
+      badge.className = 'badge';
+      badge.style.opacity = '0.5';
+      badge.innerHTML = `
+        <img src="${imgUrl}" alt="${title}" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 8px;">
+        <strong>${title}</strong><br><small>Not earned</small>
+      `;
+      unearnedPanel.appendChild(badge);
+    });
+  }
+} catch (err) {
+  console.error("Error loading awards:", err);
+}
+
+
+  
+
+    // === FETCH PROFILE PAGE (cover photo) ===
+    const profileUrl = `https://practiceforumotion.forumotion.com//u${userId}`;
+    const profileRes = await fetch(profileUrl);
+    const profileHtml = await profileRes.text();
+    const profileDoc = new DOMParser().parseFromString(profileHtml, 'text/html');
+
+    const coverImg = profileDoc.querySelector('#field_id1 img');
+    const coverUrl = coverImg?.getAttribute('src');
+    if (coverUrl) {
+      const coverDiv = document.getElementById('profileCover');
+      coverDiv.style.backgroundImage = `url('${coverUrl}')`;
+      coverDiv.style.backgroundSize = 'cover';
+      coverDiv.style.backgroundPosition = 'center';
+    }
+  
+  
+  // === ABOUT ME section (textarea from profile page)
+try {
+  const aboutTextarea = profileDoc.querySelector('textarea[name^="profile_field_2_"]');
+  const aboutText = aboutTextarea?.value?.trim();
+
+  const aboutTextEl = document.querySelector('.aboutText');
+  if (aboutTextEl) {
+    if (aboutText) {
+      aboutTextEl.textContent = aboutText;
+    } else {
+      aboutTextEl.textContent = "No information provided.";
+    }
+  }
+} catch (err) {
+  console.error("Failed to extract About Me:", err);
+}
+  
+  function populateInfoPanel(profileDoc) {
+  const infoItemsContainer = document.getElementById("infoItems");
+  if (!infoItemsContainer) return;
+
+  const fields = [
+    { label: "Gender", selector: '#field_id-7 img[alt]' },
+    { label: "Birthday", selector: '#field_id-12 .field_uneditable' },
+    { label: "Join Date", selector: '#field_id-4 .field_uneditable' },
+    { label: "Age", selector: '#field_id-5 .field_uneditable' },
+    { label: "Location", selector: '#field_id-11 .field_uneditable' }
+  ];
+
+  fields.forEach(field => {
+    let value = null;
+    if (field.label === "Gender") {
+      const el = profileDoc.querySelector(field.selector);
+      value = el?.getAttribute('alt')?.trim();
+    } else {
+      const el = profileDoc.querySelector(field.selector);
+      value = el?.textContent?.trim();
+    }
+
+    if (value && value !== "-" && value !== "") {
+      const div = document.createElement('div');
+      div.className = 'infoItem';
+      div.innerHTML = `<span>${field.label}:</span> ${value}`;
+      infoItemsContainer.appendChild(div);
+    }
+  });
+}
+populateInfoPanel(profileDoc);
+
+
+    // === FETCH CONTACT PAGE ===
+    const contactUrl = `https://practiceforumotion.forumotion.com//u${userId}contact`;
+    const contactRes = await fetch(contactUrl);
+    const contactHtml = await contactRes.text();
+    const contactDoc = new DOMParser().parseFromString(contactHtml, 'text/html');
+
+    const contactFields = contactDoc.querySelectorAll('.middleline dl');
+    const contactLinks = {};
+
+    contactFields.forEach(dl => {
+      const dt = dl.querySelector('dt')?.textContent?.trim().toLowerCase();
+      const aTag = dl.querySelector('dd a');
+      const href = aTag?.getAttribute('href');
+
+      if (!dt || !href) return;
+
+      if (dt.includes('e-mail')) contactLinks.email = href;
+      else if (dt.includes('private message')) contactLinks.pm = href;
+      else if (dt.includes('website')) contactLinks.website = href;
+      else if (dt.includes('facebook')) contactLinks.facebook = href;
+      else if (dt.includes('twitter') || dt.includes('x')) contactLinks.twitter = href;
+      else if (dt.includes('pinterest')) contactLinks.pinterest = href;
+      else if (dt.includes('skype')) contactLinks.skype = href;
+    });
+
+    // Normalize URLs
+    const baseUrl = window.location.origin;
+    ['email', 'pm'].forEach(key => {
+      if (contactLinks[key]?.startsWith('/')) {
+        contactLinks[key] = `${baseUrl}${contactLinks[key]}`;
+      }
+    });
+
+    if (contactLinks.pinterest) {
+      const match = contactLinks.pinterest.match(/https:\/\/www\.pinterest\.com\/[a-zA-Z0-9._/-]+/);
+      if (match) contactLinks.pinterest = match[0];
+    }
+
+    // === Populate socialIcons with only valid links
+    const socialIcons = document.querySelector('.socialIcons');
+    if (socialIcons) {
+      const icons = socialIcons.querySelectorAll('a');
+
+      const linkMap = [
+        { key: 'email', index: 0 },
+        { key: 'facebook', index: 1 },
+        { key: 'pinterest', index: 2 },
+        { key: 'pm', index: 3 },
+        { key: 'skype', index: 4 },
+        { key: 'twitter', index: 5 },
+        { key: 'website', index: 6 }
+      ];
+
+      linkMap.forEach(({ key, index }) => {
+        const icon = icons[index];
+        if (contactLinks[key]) {
+          icon.setAttribute('href', contactLinks[key]);
+          icon.setAttribute('target', '_blank');
+        } else {
+          icon.remove();
+        }
+      });
+    }
+
+  } catch (err) {
+    console.error("Error during profile loading:", err);
+  } finally {
+    const loadingOverlay = document.getElementById("loadingOverlay");
+    if (loadingOverlay) loadingOverlay.style.display = "none";
+  }
+});
+</script>

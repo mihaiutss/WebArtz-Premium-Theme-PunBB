@@ -1,0 +1,132 @@
+<style>
+.contest-page {
+  padding: 30px;
+  background-color: #fdfdfd;
+}
+
+.contest-header .contest-title {
+  font-size: 2.2em!important;
+  color: #00bcd4;
+  text-align: center;
+  text-shadow: 1px 1px 2px #ccc;
+  margin-bottom: 30px;
+}
+
+.contest-content .winners-list {
+  column-count: 2;
+  column-gap: 40px;
+  list-style: none;
+  padding-left: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.winners-list li {
+  break-inside: avoid;
+  background: #fff;
+  border-left: 5px solid #00bcd4;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: background 0.3s ease;
+  border-radius: 6px;
+}
+  
+  @media screen and (max-width: 768px) {
+  .contest-content .winners-list {
+    column-count: 1;
+  }
+}
+
+.winners-list li:hover {
+  background: #f1fafd;
+}
+
+.winners-list a {
+  color: #007ba7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.winners-list a:hover {
+  text-decoration: underline;
+}
+
+
+</style><div class="contest-page">
+  <div class="contest-header">
+    <h1 class="contest-title">Contest Winners</h1>
+  </div>
+  <div class="contest-content">
+
+    <ul class="winners-list">
+     <li>January 2010 - <a href="https://www.webartzforum.com/introductions-f4/promote-win-contest-1winner-dotdavid-t148.htm">Promote & Win Contest</a> - David</li>
+
+<li>February 2010 - <a href="https://www.webartzforum.com/graphics-f15/webartz-graphics-contest-winners-josh-veljko-t296.htm">Graphics Contest</a> - Josh & Veljko</li>
+
+<li>March 2010 - <a href="https://www.webartzforum.com/webartz-news-f1/code-a-page-to-win-a-page-contest-t452.htm">Code a Page to Win a Page Contest</a> - Reave</li>
+
+<li>April 2010 - <a href="https://www.webartzforum.com/webartz-news-f1/create-an-animation-contest-t655.htm">Create an Animation Contest</a> - Jake</li>
+
+<li>May 2010 - <a href="https://www.webartzforum.com/webartz-news-f1/review-webartz-contest-t795.htm">Review WebArtz Contest</a> - Amber</li>
+
+<li>June 2010 - <a href="https://www.webartzforum.com/webartz-news-f1/decorate-your-desktop-contest-t968.htm">Decorate Your Desktop Contest</a> - Syfte</li>
+
+<li>July 2010 - <a href="https://www.webartzforum.com/webartz-news-f1/photography-contest-t1143.htm">Photography Contest</a> - Nem</li>
+
+<li>August 2010 - <a href="https://www.webartzforum.com/webartz-news-f1/webartz-video-contest-t1351.htm">WebArtz Video Contest</a> - Jonathan</li>
+
+<li>September 2010 - <a href="https://www.webartzforum.com/webartz-news-f1/mr-miss-webartz-contest-t1536.htm">Mr. & Miss WebArtz Contest</a> - Agent24 & Iros</li>
+
+<li>October 2010 - <a href="https://www.webartzforum.com/webartz-news-f1/become-a-pilot-contest-winner-fred100-t1751.htm">Become a Pilot Contest</a> - Fred100</li>
+
+<li>November 2010 - <a href="https://www.webartzforum.com/webartz-news-f1/drawing-contest-t1893.htm">Drawing Contest</a> - Emilio</li>
+
+<li>December 2010 - <a href="https://www.webartzforum.com/webartz-news-f1/webartz-wallpaper-contest-t1979.htm">WebArtz Wallpaper Contest</a> - Emilio</li>
+
+
+<li>January 2011 - <a href="https://www.webartzforum.com/t2167-webartz-cartoonist-contest">WebArtz Cartoonist Contest</a> - Syfte</li>
+
+<li>February 2011 - <a href="https://www.webartzforum.com/t2241-webartz-top-poster-contest">WebArtz Top Poster Contest</a> - verrell123</li>
+
+<li>March 2011 - <a href="https://www.webartzforum.com/t2327-webartz-article-writing-contest">WebArtz Article Writing Contest</a> - N/a</li>
+
+<li>April 2011 - <a href="https://www.webartzforum.com/t2382-webartz-design-your-manga-avatar-contest">WebArtz Design your Manga Contest</a> - verrell123</li>
+
+<li>May 2011 - <a href="https://www.webartzforum.com/t2452-webartz-story-writing-contest-winner-dawn">WebArtz Story Writing Contest</a> - Dawn - <a href="https://www.webartzforum.com/t2511-the-crossroads-of-somon">The Crossroads of Somon</a> </li>
+
+<li>June 2011 - <a href="https://www.webartzforum.com/t2522-webartz-treasure-hunt-contest-winner-dawn">WebArtz Treasure Hunt Contest</a> - Dawn</li>
+
+<li>July 2011 - <a href="https://www.webartzforum.com/t2596-webartz-guess-the-star-contest">WebArtz Guess the Star Contest</a> - blindbat1457</li>
+
+<li>August 2011 - <a href="https://www.webartzforum.com/t2635-webartz-lottery-contest">WebArtz Mega Lottery Contest</a> Nera</li>
+
+<li>September 2011 - <a href="https://www.webartzforum.com/t2684-think-post-win-contest">Think Post Win Contest</a> experiencesforum</li>
+
+<li>October 2011 - <a href="https://www.webartzforum.com/t2684-think-post-win-contest">Think Post Win Contest</a> experiencesforum</li>
+
+<li>November 2011 - Contest not Hosted</li>
+
+<li>December 2011 - <a href="https://www.webartzforum.com/t2790-vote-for-mr-miss-webartz-contest">Mr & Miss WebArtz Contest 2012</a> Gassy & An</li>
+
+<li>January 2012 - Contest not Hosted</li>
+
+<li>February 2012 - <a href="https://www.webartzforum.com/t2835-treasure-hunt-contest">WebArtz Treasure Hunt Contest</a> Drogba921</li>
+
+<li>March 2012 - <a href="https://www.webartzforum.com/t2862-kick-off-contest">WebArtz Kick Off Contest</a> Drogba921</li>
+
+<li>April2012 - <a href="https://www.webartzforum.com/t2946-decorate-your-desktop-contest">WebArtz Decorate your Desktop Contest</a> Mr. Joker & pimentel2</li>
+
+<li>May 2012 - <a href="https://www.webartzforum.com/t3003-signature-contest">WebArtz Signature Contest</a> Matti</li>
+
+<li>June 2012 - <a href="https://www.webartzforum.com/t3071-write-about-your-country-contest">Write About your Country Contest</a> Iathen</li>
+
+<li>July 2012 - <a href="https://www.webartzforum.com/t3154p60-1000-member-celebration-webartz-lottery-contest">WebArtz Lottery Contest</a> experiencesforum</li>
+
+<li>August 2012 - <a href="https://www.webartzforum.com/t3225-vote-for-the-animation-contest">Create an Animation Contest</a> tommycoo</li>
+
+<li>September 2012 - <a href="https://www.webartzforum.com/t3245-sketch-man-flash-game-contest"> Sketch Man Contest</a>-</li>
+    </ul>
+
+  </div>
+</div>
