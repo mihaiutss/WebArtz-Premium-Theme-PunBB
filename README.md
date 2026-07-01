@@ -1,3 +1,2 @@
 <img width="1658" height="1042" alt="image" src="https://github.com/user-attachments/assets/496cd0f6-afda-4aff-8b76-85f10e11b22b" />
-# WebArtz-Premium-Theme-PunBB
 © WebArtz. Toate temele, elementele grafice și elementele vizuale afișate pe acest forum sunt proprietatea exclusivă a WebArtz și sunt protejate de legea drepturilor de autor. Orice copiere, distribuire sau utilizare neautorizată a acestor materiale fără acordul prealabil scris este strict interzisă.
